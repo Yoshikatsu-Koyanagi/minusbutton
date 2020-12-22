@@ -12,7 +12,6 @@ export default {
   props: ["width","height","min","max","initial"],
     data() {
       return {
-        amount: 0, //個数
         triangle_width_ratio: 0.8,
         triangle_height_ratio: 0.6,
         triangle_bar_height_ratio: 0.6,
@@ -51,8 +50,6 @@ export default {
   
   },
   mounted() {
-    //this.amount = this.initial
-
     this.flame_weight = this.width*this.flame_weight_ratio //ボタンの枠の太さ
 
 
@@ -91,11 +88,6 @@ export default {
 
 
     b.onmousedown = (e) => {
-          if(this.amount >  this.min) {
-            this.amount--;
-          }
-          else {
-          }
           minus_color = "rgba(0,0,0,0.4)";
           this.draw_minus_btn(minus_color);
           this.$emit("minusclick");    
