@@ -26,9 +26,9 @@ export default {
       //-ボタンの枠
       this.context2.globalCompositeOperation = "destination-out";
       this.context2.beginPath();
-      this.context2.moveTo(this.width*0.4*0.5,this.height*0.5*0.8); 
-      this.context2.lineTo(this.width*0.4*0.1,this.height*0.5*0.2); 
-      this.context2.lineTo(this.width*0.4*0.9,this.height*0.5*0.2);
+      this.context2.moveTo(this.tbw*0.5,this.triangle_top_margin+this.triangle_height); 
+      this.context2.lineTo(this.triangle_side_margin,this.triangle_top_margin); 
+      this.context2.lineTo(this.triangle_side_margin+this.triangle_width,this.triangle_top_margin);
       this.context2.closePath();	
       this.context2.fillStyle = "rgba(0,0,0,1)";
       this.context2.fill();
@@ -74,11 +74,11 @@ export default {
   
 
 
-    this.gradient2_b = this.context2.createLinearGradient(this.tbw*0.5, 0, this.tbw*0.5, this.tbh*0.5);
+    this.gradient2_b = this.context2.createLinearGradient(this.tbw*0.5, 0, this.tbw*0.5, this.tbh);
     this.gradient2_b.addColorStop(0.0 , 'rgba(0,50,255,0.125)');
     this.gradient2_b.addColorStop(1.0 , 'rgba(0,50,255,0.25)');
     this.context2.fillStyle = this.gradient2_b;
-    this.context2.fillRect(0,0,this.width*0.4,this.height*0.5);
+    this.context2.fillRect(0,0,this.tbw,this.tbh);
 
     
     //-ボタンを作成
